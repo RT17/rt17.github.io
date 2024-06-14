@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊網站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        .post {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            flex: 1 1 30%;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+        }
+        .post h2 {
+            color: #333;
+        }
+        .post p {
+            color: #666;
+        }
+        .post a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+        }
+        .single-post {
+            padding: 20px 0;
+        }
+        .single-post h1 {
+            color: #333;
+        }
+        .single-post p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .single-post img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .comment-section {
+            margin-top: 40px;
+        }
+        .comment-section h3 {
+            margin-bottom: 10px;
+        }
+        .comment-section form {
+            margin-bottom: 30px;
+        }
+        .comment-section input, .comment-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .comment-section input[type="submit"] {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .comment p {
+            margin: 5px 0;
+        }
+        .new-post-form {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        .new-post-form input, .new-post-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .new-post-form input[type="submit"] {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* RWD */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .post {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                padding: 10px;
+                border-top: 1px solid #444;
+                border-bottom: 1px solid #444;
+            }
+            .post {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>旅遊網站</h1>
+    </header>
+    <nav>
+        <a href="#home">首頁</a>
+        <a href="#blog">部落格文章</a>
+        <a href="#new-post">發表文章</a>
+        <a href="#contact">聯絡我們</a>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>歡迎來到台灣一日遊部落格</h2>
+            <p>探索台灣的美麗，從壯麗的山脈到美麗的海灘，這裡記錄著我們在台灣的一日遊經歷。</p>
+        </section>
+        <section id="blog" class="blog-posts">
+            <div class="post">
+                <img src="image/taipei.jpg" alt="台北101">
+                <h2>探索台北101</h2>
+                <p>台北101是台灣的地標，擁有絕佳的觀景平台，可以俯瞰整個台北市。</p>
+                <a href="#post1">閱讀更多</a>
+            </div>
+            <div class="post">
+                <img src="image/九份.jpg" alt="九份">
+                <h2>九份的浪漫黃昏</h2>
+                <p>九份以其美麗的黃昏景色和獨特的老街聞名，是一個不可錯過的旅遊景點。</p>
+                <a href="#post2">閱讀更多</a>
+            </div>
+            <div class="post">
+                <img src="image/kenting.png" alt="墾丁">
+                <h2>墾丁的陽光與海灘</h2>
+                <p>墾丁擁有台灣最美麗的海灘，是享受陽光和海灘活動的最佳地點。</p>
+                <a href="#post3">閱讀更多</a>
+            </div>
+        </section>
+        <section id="post1" class="single-post">
+            <h1>探索台北101</h1>
+            <img src="image/taipei.jpg" alt="台北101">
+            <p>台北101是台灣的地標，擁有絕佳的觀景平台，可以俯瞰整個台北市。台北101不僅是一個摩天大樓，還是一個購物中心，擁有各種國際品牌和美食。</p>
+            <p>台北101，位於台灣台北市信義區，是台灣最具代表性的地標之一，也是全球知名的摩天大樓。這座建築以其壯觀的設計和先進的建築技術而聞名，自2004年完工以來，已經成為吸引世界各地遊客的重要景點。以下是關於台北101的一些重要資訊和亮點：</p>
+            <p><strong>建築特色</strong><br>台北101的建築設計融合了現代技術與傳統文化。大樓總高度達508米，擁有101層樓，是世界最高的摩天大樓，直到2010年被迪拜的哈利法塔超越。大樓的外觀採用了許多傳統中國風格的元素，如龍的形象和擺設。</p>
+            <p><strong>觀景台</strong><br>台北101的觀景台位於大樓的第88層，提供了一個令人難忘的觀景體驗。從這裡，遊客可以俯瞰整個台北市區的壯麗景色，包括象徵性的台北市政府大樓和鄰近的象山山脈。</p>
+            <div class="comment-section">
+                <h3>發表留言</h3>
+                <form id="comment-form">
+                    <label for="name">姓名：</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="comment">留言內容：</label><br>
+                    <textarea id="comment" name="comment" rows="4" required></textarea><br>
+                    <input type="submit" value="提交留言">
+                </form>
+                <div class="comments">
+                    <h3>留言</h3>
+                    <div class="comment">
+                        <p><strong>游客A：</strong> 台北101真的很壯觀！我喜歡這裡的景色。</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>游客B：</strong> 我也來過台北101，感受到了它的震撼。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="post2" class="single-post">
+            <h1>九份的浪漫黃昏</h1>
+            <img src="image/九份.jpg" alt="九份">
+            <p>九份以其美麗的黃昏景色和獨特的老街聞名，是一個不可錯過的旅遊景點。九份不僅擁有壯麗的自然景觀，還有豐富的歷史文化。</p>
+            <p>九份位於台灣新北市，距離台北市約一小時的車程。這個小鎮曾是煤礦業的中心，但現在已經轉型為一個以觀光和文化遺產為主的景點。以下是一些探索九份的亮點：</p>
+            <p><strong>老街</strong><br>九份的老街保留了日治時期的建築風格和狹窄的街道，這裡充滿了古老的氛圍和豐富的歷史。遊客可以在這裡品嚐台灣傳統小吃，如芋圓和豆花。</p>
+            <p><strong>黃昏景色</strong><br>九份的黃昏景色迷人，特別是從九份的高處俯瞰海灣和遠處的山脈。夕陽時分，這裡的景色格外迷人，成為了情侶們的浪漫聚集地。</p>
+            <div class="comment-section">
+                <h3>發表留言</h3>
+                <form id="comment-form">
+                    <label for="name">姓名：</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="comment">留言內容：</label><br>
+                    <textarea id="comment" name="comment" rows="4" required></textarea><br>
+                    <input type="submit" value="提交留言">
+                </form>
+                <div class="comments">
+                    <h3>留言</h3>
+                    <div class="comment">
+                        <p><strong>游客C：</strong> 九份的夕陽真的很美，非常浪漫。</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>游客D：</strong> 我也喜歡九份的氛圍和小吃。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="post3" class="single-post">
+            <h1>墾丁的陽光與海灘</h1>
+            <img src="image/kenting.png" alt="墾丁">
+            <p>墾丁擁有台灣最美麗的海灘，是享受陽光和海灘活動的最佳地點。這裡有白沙灘、蔚藍的海水和豐富的水上活動，是夏季度假的理想選擇。</p>
+            <p>墾丁位於台灣屏東縣，是台灣南部最著名的旅遊勝地之一。這裡的海灘和自然景觀吸引了大量的國內外遊客，以下是一些墾丁的亮點：</p>
+            <p><strong>白沙灘</strong><br>墾丁擁有多個美麗的白沙灘，如白沙灣和墾丁大街。這裡的沙灘平緩柔軟，是家庭和情侶們享受陽光和海灘的理想地點。</p>
+            <p><strong>水上活動</strong><br>墾丁的海域豐富多彩，適合各種水上活動，如浮潛、衝浪和帆船。遊客可以在這裡體驗刺激和樂趣。</p>
+            <div class="comment-section">
+                <h3>發表留言</h3>
+                <form id="comment-form">
+                    <label for="name">姓名：</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="comment">留言內容：</label><br>
+                    <textarea id="comment" name="comment" rows="4" required></textarea><br>
+                    <input type="submit" value="提交留言">
+                </form>
+                <div class="comments">
+                    <h3>留言</h3>
+                    <div class="comment">
+                        <p><strong>游客E：</strong> 墾丁的海灘真是太美了，我下次還要來這裡玩。</p>
+                    </div>
+                    <div class="comment">
+                        <p><strong>游客F：</strong> 我喜歡這裡的水上活動，非常刺激。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="new-post" class="new-post-form">
+            <h2>發表新文章</h2>
+            <form id="new-post-form">
+                <label for="title">標題：</label><br>
+                <input type="text" id="title" name="title" required><br>
+                <label for="image">圖片連結：</label><br>
+                <input type="url" id="image" name="image" required><br>
+                <label for="content">內容：</label><br>
+                <textarea id="content" name="content" rows="4" required></textarea><br>
+                <input type="submit" value="發表文章">
+            </form>
+        </section>
+        <section id="contact">
+            <h2>聯絡我們</h2>
+            <p>如果您有任何問題或建議，請隨時與我們聯絡。</p>
+            <p>Email: rt200317@gmail.com</p>
+            <p>電話:0989093339</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 旅遊網站. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submission for new posts
+            document.getElementById('new-post-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                let title = document.getElementById('title').value;
+                let image = document.getElementById('image').value;
+                let content = document.getElementById('content').value;
+
+                // Create new post element
+                let newPost = document.createElement('div');
+                newPost.classList.add('post');
+                newPost.innerHTML = `
+                    <img src="${image}" alt="${title}">
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                    <a href="#${title}">閱讀更多</a>
+                `;
+
+                // Add new post to blog-posts section
+                let blogSection = document.getElementById('blog');
+                blogSection.appendChild(newPost);
+
+                // Clear form fields
+                document.getElementById('title').value = '';
+                document.getElementById('image').value = '';
+                document.getElementById('content').value = '';
+
+                // Scroll to the newly added post
+                newPost.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Handle comment submission
+            let commentForms = document.querySelectorAll('.comment-section form');
+            commentForms.forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    let name = this.querySelector('input[name="name"]').value;
+                    let comment = this.querySelector('textarea[name="comment"]').value;
+
+                    // Create new comment element
+                    let newComment = document.createElement('div');
+                    newComment.classList.add('comment');
+                    newComment.innerHTML = `
+                        <p><strong>${name}：</strong> ${comment}</p>
+                    `;
+
+                    // Append new comment to comments section
+                    let commentsSection = this.nextElementSibling;
+                    commentsSection.appendChild(newComment);
+
+                    // Clear form fields
+                    this.querySelector('input[name="name"]').value = '';
+                    this.querySelector('textarea[name="comment"]').value = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
